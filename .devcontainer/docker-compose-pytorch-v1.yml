@@ -1,0 +1,18 @@
+version: "3"
+services:
+  pytorch_v1:
+    shm_size: "10gb"
+    build:
+      context: ../docker/pytorch_v1
+    environment:
+      - PYTHONPATH=/workspace/python
+    volumes:
+      - ..:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]
