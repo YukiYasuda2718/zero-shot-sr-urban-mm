@@ -1,0 +1,49 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "1.26.4"
+scipy = "*"
+scikit-learn = "*"
+pandas = "*"
+tqdm = "*"
+mlflow = "*"
+hydra-core = "*"
+xarray = "*"
+netcdf4 = "*"
+cartopy = "*"
+xgrads = "*"
+torch = {file = "https://download.pytorch.org/whl/cu113/torch-1.12.1%2Bcu113-cp39-cp39-linux_x86_64.whl"}
+pyyaml = "*"
+geopandas = "*"
+rioxarray = "*"
+shapely = "*"
+h5netcdf = "*"
+opencv-python = "*"
+opencv-contrib-python = "*"
+tabulate = "*"
+numba = "*"
+einops = "*"
+torchvision = {file = "https://download.pytorch.org/whl/cu113/torchvision-0.13.1%2Bcu113-cp39-cp39-linux_x86_64.whl"}
+piq = "*"
+
+[dev-packages]
+black = "*"
+flake8 = "*"
+isort = "*"
+ipykernel = "*"
+matplotlib = "*"
+jupyterlab = "*"
+python-lsp-server = "*"
+jupyter-lsp = "*"
+jupyterlab-lsp = "*"
+ipython = "*"
+jupyterlab-code-formatter = "*"
+ipywidgets = "*"
+seaborn = "*"
+plotly = "*"
+
+[requires]
+python_version = "3.9"
