@@ -1,0 +1,23 @@
+version: "3"
+services:
+  pytorch_v1:
+      shm_size: "10gb"
+      build:
+        context: ./docker/pytorch_v1
+      tty: true
+      ports:
+        - "10170:8888"
+      environment:
+        - PYTHONPATH=/workspace/python
+      volumes:
+        - ./data:/workspace/data:cached
+        - ./python:/workspace/python:cached
+      command:
+        jupyter lab --ip=0.0.0.0 --allow-root --no-browser --NotebookApp.token=''
+      deploy:
+        resources:
+          reservations:
+            devices:
+              - driver: nvidia
+                device_ids: ['0']
+                capabilities: [gpu]
