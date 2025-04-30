@@ -1,0 +1,73 @@
+data:
+  biases:
+    bldg: 0.0
+    gt: 310.0
+    land: 3.5
+    tm: 306.0
+    tm_g1: 331.0
+    vl: 0.0
+    vp: 0.0
+  concat_topography_with_position: true
+  dir_paths: []
+  discarded_minute_range:
+  - 1
+  - 30
+  dtype: float32
+  hr_name: tokyo_20m_vz_no_s2srad
+  input_variables:
+  - tm02m
+  - tm_g1
+  - tm_010m
+  - tm_040m
+  - tm_089m
+  - tm_158m
+  - tm_248m
+  - vl_010m
+  - vl_040m
+  - vl_089m
+  - vl_158m
+  - vl_248m
+  - vp_010m
+  - vp_040m
+  - vp_089m
+  - vp_158m
+  - vp_248m
+  interpolation_mode: nearest-exact
+  lr_name: mssg-auto
+  scales:
+    bldg: 200.0
+    gt: 10.0
+    land: 2.5
+    tm: 5.0
+    tm_g1: 10.0
+    vl: 9.5
+    vp: 9.5
+  target_variables:
+  - tm02m
+  used_segment_indices:
+  - 0
+  x_crop_size: 80
+  x_full_size: 80
+  x_segmented_size: 80
+  y_crop_size: 80
+  y_full_size: 80
+  y_segmented_size: 80
+loader:
+  batch_size: 64
+  dataset_name: DatasetSegmentedTUVWithPos
+  dl_data_name: v02
+  train_valid_test_ratios:
+  - 0.7
+  - 0.15
+  - 0.15
+model:
+  in_channels: 23
+  is_globally_skipped: true
+  lr_tm_channel: 0
+  model_name: SESRCNNWithPos
+train:
+  early_stopping_patience: 50
+  epochs: 5000
+  learning_rate: 0.001
+  loss_name: L1
+  seed: 44270
