@@ -2,6 +2,7 @@
 # Description
 
 This repository contains the source code used in "Zero-Shot Super-Resolution from Unstructured Data Using a Transformer-Based Neural Operator for Urban Micrometeorology" by Yuki Yasuda and Ryo Onishi. We have used PyTorch 1.12.1 with an NVIDIA RTX A6000.
+- [Link to arXiv](https://arxiv.org/abs/2504.21361)
 
 # Files and Directories
 
